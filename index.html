@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Recommendations</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        nav { background-color: #333; padding: 15px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px; }
+        nav a { color: white; text-decoration: none; font-size: 16px; margin: 0 10px; }
+        nav input { padding: 5px; border-radius: 4px; border: none; }
+        nav button { padding: 6px 12px; cursor: pointer; border: none; border-radius: 4px; background-color: #007BFF; color: white; font-weight: bold; }
+        nav button:hover { background-color: #0056b3; }
+        .container { max-width: 1000px; margin: 20px auto; padding: 20px; text-align: center; }
+        .category-section { margin-bottom: 40px; display: block; } /* Domyślnie widoczne */
+        .images-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .images-grid img { width: 300px; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        h2 { color: #333; }
+    </style>
+</head>
+<body>
+
+    <!-- ZADANIE 5: Pasek nawigacyjny z 6 wymaganymi elementami -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <input type="text" id="searchInput" placeholder="Wpisz np. beach, temple, country...">
+        <button onclick="search()">Search</button>
+        <button onclick="clearSearch()" style="background-color: #dc3545;">Clear</button>
+    </nav>
+
+    <div class="container">
+        <h1>Welcome to Travel Recommendations</h1>
+
+        <!-- Sekcja: Beaches (Zadanie 6) -->
+        <div id="beaches" class="category-section">
+            <h2>Top Beaches</h2>
+            <div class="images-grid">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" alt="Beach 1">
+                <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=400&q=80" alt="Beach 2">
+            </div>
+        </div>
+
+        <!-- Sekcja: Temples (Zadanie 7) -->
+        <div id="temples" class="category-section">
+            <h2>Beautiful Temples</h2>
+            <div class="images-grid">
+                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=400&q=80" alt="Temple 1">
+                <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?auto=format&fit=crop&w=400&q=80" alt="Temple 2">
+            </div>
+        </div>
+
+        <!-- Sekcja: Countries (Zadanie 8) -->
+        <div id="countries" class="category-section">
+            <h2>Amazing Countries</h2>
+            <div class="images-grid">
+                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=400&q=80" alt="Country 1 (Paris)">
+                <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=400&q=80" alt="Country 2 (Venice)">
+            </div>
+        </div>
+    </div>
+
+    <!-- Skrypt do wyszukiwania -->
+    <script>
+        function search() {
+            // Pobierz wpisany tekst i zamień na małe litery
+            let query = document.getElementById('searchInput').value.toLowerCase();
+            
+            // Pobierz sekcje
+            let beaches = document.getElementById('beaches');
+            let temples = document.getElementById('temples');
+            let countries = document.getElementById('countries');
+
+            // Ukryj wszystkie sekcje
+            beaches.style.display = 'none';
+            temples.style.display = 'none';
+            countries.style.display = 'none';
+
+            // Pokaż odpowiednią sekcję na podstawie wyszukiwania
+            if (query.includes('beach')) {
+                beaches.style.display = 'block';
+            } else if (query.includes('temple')) {
+                temples.style.display = 'block';
+            } else if (query.includes('countr')) {
+                countries.style.display = 'block';
+            } else if (query === "") {
+                // Jeśli puste, pokaż wszystko
+                beaches.style.display = 'block';
+                temples.style.display = 'block';
+                countries.style.display = 'block';
+            } else {
+                alert("Brak wyników. Wpisz: beach, temple lub country.");
+            }
+        }
+
+        function clearSearch() {
+            // Wyczyść pole i pokaż wszystkie sekcje
+            document.getElementById('searchInput').value = "";
+            document.getElementById('beaches').style.display = 'block';
+            document.getElementById('temples').style.display = 'block';
+            document.getElementById('countries').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

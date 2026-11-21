@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Travel Recommendations</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        nav { background-color: #333; padding: 15px; display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px; }
+        nav a { color: white; text-decoration: none; font-size: 16px; margin: 0 10px; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        nav input { padding: 8px; border-radius: 4px; border: none; width: 200px; }
+        nav button { padding: 8px 15px; cursor: pointer; border: none; border-radius: 4px; font-weight: bold; }
+        .btn-search { background-color: #007BFF; color: white; }
+        .btn-clear { background-color: #dc3545; color: white; }
+        .container { max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; }
+    </style>
+</head>
+<body>
+
+    <!-- Pasek Nawigacyjny -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button class="btn-search" onclick="window.location.href='index.html'">Search</button>
+        <button class="btn-clear" onclick="document.getElementById('searchInput').value = ''">Clear</button>
+    </nav>
+
+    <div class="container">
+        <h1>About Our Company</h1>
+        <p>Welcome to Travel Recommendations! We are a team of passionate travelers dedicated to helping you explore the world's most breathtaking destinations. Our mission is to provide honest, detailed, and inspiring guidance for your next adventure.</p>
+        
+        <h2>Our Guidance for Team Members</h2>
+        <p>We believe in sustainable travel and cultural respect. When visiting new places, always remember to support local communities, respect local customs and religious sites (especially temples), and leave no trace behind on our beautiful beaches.</p>
+        
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li>Curated lists of the best beaches and temples.</li>
+            <li>In-depth guides for amazing countries.</li>
+            <li>A simple, easy-to-use search tool to find exactly what you need.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
